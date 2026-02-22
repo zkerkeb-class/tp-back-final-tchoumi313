@@ -1,12 +1,13 @@
 import passport from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
+import { CONFIG } from "./constants.js";
 
 passport.use(
   new GoogleStrategy(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "/api/auth/google/callback",
+      callbackURL: `${process.env.BACKEND_URL || CONFIG.BACKEND_URL}/api/auth/google/callback`,
     },
     (accessToken, refreshToken, profile, done) => {
       // Build a lean user object from the Google profile

@@ -1,5 +1,6 @@
 export const CONFIG = {
   PORT: process.env.PORT || 3000,
+  BACKEND_URL: process.env.BACKEND_URL || "http://localhost:3000",
   FRONTEND_URL: process.env.FRONTEND_URL || "http://localhost:5173",
   UPLOAD_DIR: "assets/uploads",
   DEFAULT_PAGE: 1,
