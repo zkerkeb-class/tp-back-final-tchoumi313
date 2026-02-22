@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const connectDB = async () => {
   try {
-    await mongoose.connect('mongodb://localhost:27017/pokemon-db', {
+    await mongoose.connect(process.env.MONGODB ,{//'mongodb://localhost:27017/pokemon-db', {
     });
     console.log('Connected to MongoDB');
   } catch (err) {
